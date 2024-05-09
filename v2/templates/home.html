@@ -1,8 +1,30 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>smaller3 - V2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='home.css' ) }}">
 </head>
 <body>
-    
+
+<div class="navbar">
+  <a href="/home">Home</a>
+  <a href="/faq">FaQ</a>
+  <div class="subnav">
+    <button class="subnavbtn">App <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="/smaller3">Smaller3</a>
+      <a href="/zodiac">Zodiac Check</a>
+      <a href="/message3">Message3</a>
+      <a href="/news">News</a>
+    </div>
+  </div> 
+</div>
+
+<div style="padding:0 16px">
+  <h3>Welcome, {{ username }}!</h3>
+  <!-- <p>Hover over the "about", "services" or "partners" link to see the sub navigation menu.</p> -->
+</div>
+
 </body>
+</html>
