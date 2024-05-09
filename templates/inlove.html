@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InLove</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon_il.png') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+    <style>
+    body {
+        background-color: #f9d9eb;
+        font-family: 'Dancing Script', cursive;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        background-image: linear-gradient(to right, #ffb8c4, #ff7eb3);
+        background-size: 200% 200%;
+        animation: gradientAnimation 10s ease infinite, moveDiagonal 10s ease infinite;
+    }
+        @keyframes bodyGradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            width: 80%;
+            position: relative;
+        }
+        .left-image,
+        .right-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .circle-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 10px;
+            position: relative;
+        }
+        .circle-image img {
+            width: 100%;
+            height: auto;
+        }
+        .age-container {
+            position: absolute;
+            top: -35px; /* pos the divs above the images */
+            left: 50%; /* center hort. */
+            transform: translateX(-50%); /* center hort. */
+            display: flex;
+            align-items: center;
+        }
+        .age-sign,
+        .zodiac-sign {
+            width: 40px;
+            height: 30px;
+            font-size: 15px;
+            margin: 0 5px; /* add margin between age and zodiac divs */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px; /* rounded */
+            /* Gradient background */
+            background-image: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white; /* Set text color to white for better visibility */
+            /* Animation */
+            animation: gradientAnimation 3s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .days-passed {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            padding: 20px;
+            flex: 1;
+            position: relative; /* Relative positioning for containing the absolute positioned heart container */
+            z-index: 1; /* Ensure the text is in front of the heart container */
+        }
+        .heart-container {
+            background-image: url('{{ heart }}');
+            background-size: cover;
+            width: 450px;
+            height: 450px;
+            position: fixed;
+            top: calc(50% - 225px);
+            left: calc(50% - 225px);
+            animation: heartbeat 1s infinite alternate;
+            z-index: 0;
+        }
+
+
+        @keyframes heartbeat {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-image">
+            <div class="age-container">
+                <div class="age-sign">{{ p1age }}</div>
+                <div class="zodiac-sign">♈</div>
+            </div>
+            <div class="circle-image">
+                <img src="{{ tram }}" alt="Quynh Tram">
+            </div>
+            <p>Mochi Tram</p>
+        </div>
+        <div class="days-passed">
+            <p class="text">Loved for {{ ypassed }} years, {{ mpassed }} month, {{ dpassed }} days</p>
+        </div>
+        <div class="right-image">
+            <div class="age-container">
+                <div class="age-sign">{{ p2age }}</div>
+                <div class="zodiac-sign">♉</div>
+            </div>
+            <div class="circle-image">
+                <img src="{{ anhpham }}" alt="Quoc Anh">
+            </div>
+            <p>Anh Pham</p>
+        </div>
+        <div class="heart-container"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffeefa;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #ffc8c8;
+            border-radius: 5px;
+            background-color: #ffc8c8;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background-color: #ffc8c8;
+            border-color: #ffc8c8;
+            color: #fff;
+        }
+        body {
+            animation: gradientMove 20s linear infinite;
+            background-size: 400% 400%;
+            background-image: linear-gradient(to right, #F5EEE6, #FFF8E3, #F3D7CA, #E6A4B4);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Smaller3</h1>
+        <p>Chọn một thứ:</p>
+        <ul>
+            <li><a href="{{ url_for('zodiac') }}">Check your Zodiac</a></li>
+            <li><a href="{{ url_for('inlove') }}">InLove App</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Kết Quả</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9d3d3;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <h1>Cung Hoàng Đạo</h1>
+        <p>Cung Hoàng Đạo của bạn là: {{ zodiac_sign }}</p>
+        <p>Icon cho bạn: {{ zodiac_symbol }}</p>
+    </div>
+</body>
+</html>
