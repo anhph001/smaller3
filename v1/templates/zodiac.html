@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Cung Hoàng Đạo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9d3d3;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <h1>Ngày sinh của bạn?</h1>
+        <form action="/zodiac" method="POST">
+            <label for="month">Tháng (1-12):</label>
+            <input type="number" id="month" name="month" min="1" max="12" required><br><br>
+            <label for="day">Ngày (1-31):</label>
+            <input type="number" id="day" name="day" min="1" max="31" required><br><br>
+            <button type="submit">Xác nhận</button>
+        </form>
+    </div>
+</body>
+</html>
